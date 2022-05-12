@@ -77,7 +77,7 @@ if cxx and 'g++' in cxx:
     # Add -pedantic, so we get a warning when using non-standard features, and
     # -Wno-long-long to pacify old gcc (or Apple's hybrids) that treat "long
     # long" as an error under C++ (see issue #69)
-    extension_options['extra_compile_args'] = ['-pedantic', '-Wno-long-long']
+    extension_options['extra_compile_args'] = ['-pedantic', '-Wno-long-long', '-Wno-absolute-value', '-Wno-nullability-extension']
 
     # Up to Python 3.7, some structures use "char*" instead of "const char*",
     # and ISO C++ forbids assigning string literal constants
