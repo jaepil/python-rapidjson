@@ -37,9 +37,12 @@ using namespace rapidjson;
 #if defined (_MSC_VER) && (_MSC_VER < 1900)
 #define IS_NAN(x) Py_IS_NAN(x)
 #define IS_INF(x) Py_IS_INFINITY(x)
-#else
+#elif !defined(isnan) && !defined(isinf)
 #define IS_NAN(x) std::isnan(x)
 #define IS_INF(x) std::isinf(x)
+#else
+#define IS_NAN(x) isnan(x)
+#define IS_INF(x) isinf(x)
 #endif
 
 
